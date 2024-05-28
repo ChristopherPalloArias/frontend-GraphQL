@@ -8,12 +8,11 @@ const LOGIN_QUERY = gql`
   }
 `;
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const client = useApolloClient();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +22,11 @@ const Login = () => {
         variables: { username, password }
       });
       console.log('Login response:', data);
-      setSuccess(data.login); // Mostrar mensaje de éxito
+      if (data.login === "Login Successfully") {
+        onLogin(); // Invocar la función onLogin después de un inicio de sesión exitoso
+      } else {
+        setError("Invalid credentials");
+      }
     } catch (err) {
       console.error('Login error:', err);
       setError(err.message);
@@ -49,7 +52,6 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       {error && <p>{error}</p>}
-      {success && <p>{success}</p>}
     </div>
   );
 };

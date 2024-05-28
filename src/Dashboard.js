@@ -1,12 +1,13 @@
 import React from 'react';
 
-function Dashboard({ onLogout }) {
+const Dashboard = ({ onLogout }) => {
   return (
     <div>
-      <h1>Bienvenido al Sistema</h1>
-      <button onClick={onLogout}>Cerrar Sesión</button>
+      <h2>Welcome to the Dashboard!</h2>
+      <p>This is a protected route.</p>
+      <button onClick={onLogout}>Logout</button>
     </div>
   );
-}
+};
 
 export default Dashboard;
