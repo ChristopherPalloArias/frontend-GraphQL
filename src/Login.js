@@ -35,7 +35,7 @@ const Login = ({ onLogin }) => {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Login GraphQL</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -51,7 +51,7 @@ const Login = ({ onLogin }) => {
         />
         <button type="submit">Login</button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };

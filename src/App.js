@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import client from './apollo';
 import Login from './Login';
 import Dashboard from './Dashboard';
+import './App.css';
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
