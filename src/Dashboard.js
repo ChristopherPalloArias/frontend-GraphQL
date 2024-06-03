@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Componente funcional para el Dashboard
 const Dashboard = ({ onLogout }) => {
   return (
     <div className="dashboard">
